@@ -4,3 +4,106 @@
 *:after {
   box-sizing: border-box;
 }
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  
+}
+#wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color:white;
+  padding: 0;
+}
+
+.siteName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 12px 20px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.siteName:hover {
+  color: #555;
+}
+
+#tools {
+  text-align: right;
+  padding-right: 30px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;  
+}
+
+nav {
+  background-color: #3a3a3a;
+  color: white;
+  margin:10px;
+}
+nav ul {
+  list-style-type: none;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  border-right: 1px solid #555;
+}
+
+nav li:last-child {
+  border-right: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 40px;
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+.hero {
+  background: url('../images/vehicles/delorean.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: left;
+}
+
+.hero-content {
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+
+}

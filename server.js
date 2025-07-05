@@ -19,6 +19,11 @@ app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout")
 
+// Index Route
+app.get("/", function(req, res) {
+    res.render("index", { title: "Home" });
+});
+
 /* ***********************
  * Local Server Information
  * Values from .env (environment) file
