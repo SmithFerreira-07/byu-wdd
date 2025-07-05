@@ -208,7 +208,7 @@ nav a:hover {
 }
 
 .upgrade-item {
-  background-color: #4c96d7;
+  background-color: #C5DDF2;
   text-align: center;
   padding: 15px;
   border-radius: 8px;
@@ -262,7 +262,7 @@ nav a:hover {
 
 .reviews-list li::before {
   content: "• ";
-  color: #4c96d7;
+  color: #C5DDF2;
   font-weight: bold;
   margin-right: 8px;
 }
