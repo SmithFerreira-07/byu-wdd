@@ -10,5 +10,9 @@ router.use("/images", express.static(__dirname + "public/images"));
 
 module.exports = router;
 
+//Index Route
+app.get("/", function(req, res) {
+    res.render("index", { title: "Home" });
+});
 
 
