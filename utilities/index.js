@@ -35,13 +35,13 @@ Util.buildClassificationGrid = async function(data){
       grid += '<li>'
       grid +=  '<a href="../../inv/detail/'+ vehicle.inv_id 
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
-      + 'details"><img src="' + vehicle.inv_thumbnail 
+      + ' details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
       +' on CSE Motors" /></a>'
       grid += '<div class="namePrice">'
       grid += '<hr />'
       grid += '<h2>'
-      grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
+      grid += '<a class="vehicle-title" href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + '</a>'
       grid += '</h2>'
@@ -56,5 +56,25 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+
+Util.buildVehicleDetailGrid = async function(data) {
+  let vehicle = data[0]; // We expect only one vehicle's data
+  let grid = `
+    <div id="detail-view">
+      <img src="${vehicle.inv_image}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model}">
+      <div id="detail-data">
+        <h2>${vehicle.inv_make} ${vehicle.inv_model} Details</h2>
+        <p><strong>Price:</strong> ${new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(vehicle.inv_price)}</p>
+        <p><strong>Description:</strong> ${vehicle.inv_description}</p>
+        <p><strong>Mileage:</strong> ${new Intl.NumberFormat('en-US').format(vehicle.inv_miles)}</p>
+        <p><strong>Year:</strong> ${vehicle.inv_year}</p>
+      </div>
+    </div>
+  `;
+  return grid;
+};
+
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 module.exports = Util
