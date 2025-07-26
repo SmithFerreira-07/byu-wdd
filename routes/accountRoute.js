@@ -7,7 +7,11 @@ const accountController = require("../controllers/accountController")
 // GET route for My Account page
 router.get("/", utilities.handleErrors(accountController.buildAccount));
 
+
 // GET route for Login page
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
+
+// GET route for Registration page
+router.get("/register", utilities.handleErrors(accountController.buildRegister));
 
 module.exports = router;

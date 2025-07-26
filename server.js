@@ -51,6 +51,7 @@ app.set("layout", "./layouts/layout")
 app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
+// Register Route (handled in accountRoute.js)
 
 // Error Route
 app.use(async (req, res, next) => {

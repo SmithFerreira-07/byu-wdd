@@ -1,3 +1,186 @@
+
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: #C5DDF2;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(76,150,215,0.12);
+  border: 2px solid #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(76,150,215,0.18);
+  border: 3px solid #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  color: #1d1f20;
+  text-align: center;
+}
+.register-container h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-align: center;
+}
+
+.login-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1d1f20;
+}
+.register-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1d1f20;
+}
+
+.login-container input[type="email"],
+  .login-container input[type="password"],
+  .login-container input[type="text"] {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid #4c96d7;
+  border-radius: 8px;
+  font-size: 1em;
+  background: #f8f9fa;
+  transition: border-color 0.2s;
+}
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.3rem;
+  border: 2px solid #4c96d7;
+  border-radius: 10px;
+  font-size: 1.05em;
+  background: #eaf4fb;
+  transition: border-color 0.2s;
+}
+
+.login-container input:focus {
+  border-color: #000000;
+  outline: none;
+}
+.register-container input:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.password-hint {
+  display: block;
+  font-size: 0.95em;
+  color: #333;
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+  text-align: left;
+}
+
+.login-container button[type="button"] {
+  width: 100%;
+  padding: 0.6rem;
+  background: #4c96d7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  transition: background 0.2s;
+}
+.register-container button[type="button"] {
+  width: 100%;
+  padding: 0.6rem;
+  background: #4c96d7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 0.7rem;
+  transition: background 0.2s;
+}
+
+.login-container button[type="button"]:hover {
+  background: #000000;
+}
+
+
+.login-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+.register-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+
+.login-container button[type="submit"]:hover {
+  background: #4c96d7;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1em;
+}
+
+.signup-link a {
+  color: #000000;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.flash-message {
+  background: #C5DDF2;
+  color: #000000;
+  border: 2px solid #4c96d7;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+
 #detail-view {
   display: flex;
   flex-wrap: wrap;
