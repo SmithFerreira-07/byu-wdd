@@ -11,7 +11,11 @@ router.get("/", utilities.handleErrors(accountController.buildAccount));
 // GET route for Login page
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
 
+
 // GET route for Registration page
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
+
+// POST route for Registration form submission
+router.post('/register', utilities.handleErrors(accountController.registerAccount));
 
 module.exports = router;

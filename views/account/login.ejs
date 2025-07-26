@@ -5,9 +5,9 @@
 <body>
   <div class="login-container">
     <h1><%= title %></h1>
-    <% if (locals.messages) { %>
+    <% if (typeof messages === 'function') { %>
       <div class="flash-message">
-        <%= messages() %>
+        <%- messages() %>
       </div>
     <% } %>
     <form action="/account/login" method="POST">
