@@ -1,3 +1,201 @@
+/* Add Classification Form Styles */
+.add-classification-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: #eaf4fb;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(76,150,215,0.10);
+  border: 2px solid #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-classification-container h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  color: #1d1f20;
+  text-align: center;
+}
+
+.add-classification-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1d1f20;
+}
+
+.add-classification-container input[type="text"] {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid #4c96d7;
+  border-radius: 8px;
+  font-size: 1em;
+  background: #f8f9fa;
+  transition: border-color 0.2s;
+}
+
+.add-classification-container input:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.add-classification-container p {
+  font-size: 0.95em;
+  color: #333;
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+  text-align: left;
+}
+
+.add-classification-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+
+.add-classification-container button[type="submit"]:hover {
+  background: #4c96d7;
+}
+
+/* Add Inventory Form Styles */
+.add-inventory-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  background: #eaf4fb;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(76,150,215,0.12);
+  border: 3px solid #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-inventory-container h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-align: center;
+}
+
+.add-inventory-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1d1f20;
+}
+
+.add-inventory-container input[type="text"],
+.add-inventory-container input[type="number"],
+.add-inventory-container textarea,
+.add-inventory-container select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.3rem;
+  border: 2px solid #4c96d7;
+  border-radius: 10px;
+  font-size: 1.05em;
+  background: #f8f9fa;
+  transition: border-color 0.2s;
+}
+
+.add-inventory-container input:focus,
+.add-inventory-container textarea:focus,
+.add-inventory-container select:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.add-inventory-container button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+}
+
+.add-inventory-container button[type="submit"]:hover {
+  background: #4c96d7;
+}
+
+.notice {
+  background: #C5DDF2;
+  color: #000000;
+  border: 2px solid #4c96d7;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+  font-size: 1em;
+  list-style: disc inside;
+}
+
+/* Inventory Management Page Styles */
+.management-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 2rem 2.5rem;
+  background: #eaf4fb;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(76,150,215,0.10);
+  border: 2px solid #4c96d7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.management-container h1 {
+  font-size: 2em;
+  margin-bottom: 1.5rem;
+  color: #1d1f20;
+  text-align: center;
+}
+
+.management-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.management-container li {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.management-container a {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background: #4c96d7;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.management-container a:hover {
+  background: #000000;
+}
 
 .login-container {
   max-width: 400px;
