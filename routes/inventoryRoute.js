@@ -9,6 +9,7 @@ router.get("/type/:classificationId", invController.buildByClassificationId);
 router.get("/detail/:inventoryId", invController.buildByInventoryId);
 router.get("/", invController.buildManagementView);
 router.get("/add-classification", invController.buildAddClassificationView);
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON));
 router.post(
     "/add-classification",
     invValidate.classificationRules(),
