@@ -42,6 +42,8 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * Routes
@@ -73,10 +75,6 @@ app.use(async (err, req, res, next) => {
     nav
   })
 })
-
-
-app.use(cookieParser())
-app.use(utilities.checkJWTToken)
 
 /* ***********************
  * Local Server Information
