@@ -149,6 +149,83 @@
   align-items: center;
 }
 
+/* Delete Inventory Form Styles */
+.delete-inventory-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  background: #ffe6e6;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(215,76,76,0.12);
+  border: 3px solid #d74c4c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-warning {
+  color: #d74c4c;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.vehicle-info {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid #d74c4c;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.vehicle-info p {
+  margin: 0.5rem 0;
+  font-size: 1.1em;
+}
+
+.delete-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.delete-btn {
+  padding: 0.8rem 1.5rem;
+  background: #d74c4c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #c23e3e;
+}
+
+.cancel-btn {
+  padding: 0.8rem 1.5rem;
+  background: #4c96d7;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.cancel-btn:hover {
+  background: #000000;
+}
+
 .notice {
   background: #C5DDF2;
   color: #000000;

@@ -18,6 +18,8 @@ router.post(
 
 
 router.get("/edit/:inventory_id", utilities.handleErrors(invController.editInventoryView));
+// Route to build delete inventory view
+router.get("/delete/:inventory_id", utilities.handleErrors(invController.deleteInventoryView));
 router.get("/add-inventory", invController.buildAddInventoryView);
 
 // Route to process the update inventory request
@@ -26,6 +28,12 @@ router.post(
     invValidate.inventoryRules(),
     invValidate.checkUpdateData,
     utilities.handleErrors(invController.updateInventory)
+  );
+
+// Route to process the delete inventory request
+router.post(
+    "/delete",
+    utilities.handleErrors(invController.deleteInventory)
   );
 
 router.post(
