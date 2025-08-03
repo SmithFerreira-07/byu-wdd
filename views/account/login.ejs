@@ -10,11 +10,11 @@
         <%- messages() %>
       </div>
     <% } %>
-    <form action="/account/login" method="POST">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+    <form id="loginForm" action="/account/login" method="post">
+      <label for="account_email">Email:</label>
+      <input type="email" id="account_email" name="account_email" required>
+      <label for="account_password">Password:</label>
+      <input type="password" id="account_password" name="account_password" required>
       <button type="submit">LOGIN</button>
     </form>
     <div class="signup-link">

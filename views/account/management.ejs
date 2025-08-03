@@ -1,0 +1,11 @@
+<section class="account-management">
+  <% if (message && message.length) { %>
+    <div class="flash-message"><%= message %></div>
+  <% } %>
+  <% if (errors) { %>
+    <div class="errors"><%= errors %></div>
+  <% } %>
+  <h1>Account Management</h1>
+  <p>You're logged in</p>
+</section>
+
