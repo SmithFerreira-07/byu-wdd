@@ -1001,6 +1001,11 @@ nav a:hover {
     border: none;
     padding: 10px;
   }
+  nav ul.active {
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 
   .siteName a {
     font-size: 20px;
