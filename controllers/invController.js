@@ -2,12 +2,12 @@ const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
 
 const invCont = {}
+const reviewModel = require("../models/review-model")
 
 /* ***************************
  *  Build inventory by classification view
  * ************************** */
 invCont.buildByClassificationId = async function (req, res, next) {
-  // Add the try block
   try {
     const classification_id = req.params.classificationId
     const data = await invModel.getInventoryByClassificationId(classification_id)
@@ -34,10 +34,15 @@ invCont.buildByInventoryId = async function (req, res, next) {
     const grid = await utilities.buildVehicleDetailGrid(data)
     let nav = await utilities.getNav()
     const vehicleName = `${data[0].inv_year} ${data[0].inv_make} ${data[0].inv_model}`
+    const reviewsResult = await reviewModel.getReviewsByVehicle(inventory_id)
+    const reviews = reviewsResult.rows
     res.render("./inventory/detail", {
       title: vehicleName,
       nav,
       grid,
+      reviews,
+      accountData: req.accountData,
+      inventory_id,
     })
   } catch (error) {
     next(error)

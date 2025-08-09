@@ -15,6 +15,7 @@ const utilities = require("./utilities/")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const accountRoute = require("./routes/accountRoute")
+const reviewRoute = require("./routes/reviewRoute")
 const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
@@ -44,6 +45,16 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(utilities.checkJWTToken)
+// Ensure accountData and loggedin are always set in res.locals
+app.use((req, res, next) => {
+  if (!res.locals.accountData) {
+    res.locals.accountData = null;
+  }
+  if (!res.locals.loggedin) {
+    res.locals.loggedin = 0;
+  }
+  next();
+});
 
 /* ***********************
  * Routes
@@ -58,6 +69,7 @@ app.set("layout", "./layouts/layout")
 app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
+app.use("/reviews", reviewRoute)
 // Register Route (handled in accountRoute.js)
 
 // Error Route

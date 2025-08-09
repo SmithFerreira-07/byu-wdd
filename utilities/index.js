@@ -113,9 +113,10 @@ Util.checkJWTToken = (req, res, next) => {
      res.clearCookie("jwt")
      return res.redirect("/account/login")
     }
-    res.locals.accountData = accountData
-    res.locals.loggedin = 1
-    next()
+  res.locals.accountData = accountData
+  res.locals.loggedin = 1
+  req.accountData = accountData
+  next()
    })
  } else {
   next()

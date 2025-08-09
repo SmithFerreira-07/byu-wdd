@@ -1,1 +1,64 @@
 <%- grid %>
+<section class="reviews">
+	<h2>Reviews</h2>
+	<ul class="reviews-list">
+		<% if (reviews && reviews.length > 0) { %>
+			<% reviews.forEach(function(review) { %>
+				<li class="review-item">
+					<div class="review-header">
+						<span class="review-author">
+							<strong><%= review.account_firstname %> <%= review.account_lastname %></strong>
+						</span>
+						<span class="review-rating">
+							<% for (let i = 1; i <= 5; i++) { %>
+								<% if (i <= review.rating) { %>
+									<span class="star filled">★</span>
+								<% } else { %>
+									<span class="star">★</span>
+								<% } %>
+							<% } %>
+						</span>
+					</div>
+					<div class="review-body"><%= review.comment %></div>
+					<div class="review-footer">
+						<span class="review-date">
+							<span class="review-date-icon" aria-label="Date">📅</span>
+							<small><%= new Date(review.created_at).toLocaleString() %></small>
+						</span>
+						<% if (accountData && review.account_id === accountData.account_id) { %>
+							<form action="/reviews/delete" method="POST" style="display:inline;">
+								<input type="hidden" name="vehicle_id" value="<%= inventory_id %>">
+								<button type="submit" class="delete-review-btn">Delete</button>
+							</form>
+						<% } %>
+					</div>
+				</li>
+			<% }) %>
+		<% } else { %>
+			<li class="review-item empty-state">Be the first to share your thoughts about this vehicle!</li>
+		<% } %>
+	</ul>
+</section>
+
+<% let userReview = null;
+   if (accountData && reviews) {
+     userReview = reviews.find(r => r.account_id === accountData.account_id);
+   }
+%>
+<% if (accountData) { %>
+  <% if (!userReview) { %>
+		<div class="center-review-btn">
+			<form action="/reviews/new" method="GET">
+				<input type="hidden" name="vehicle_id" value="<%= inventory_id %>">
+				<button type="submit" class="add-review-btn">Leave a Review</button>
+			</form>
+		</div>
+  <% } else { %>
+    <form action="/reviews/edit" method="GET" style="text-align:center; margin-top:2rem;">
+      <input type="hidden" name="vehicle_id" value="<%= inventory_id %>">
+      <button type="submit" class="add-review-btn">Edit Your Review</button>
+    </form>
+  <% } %>
+<% } else { %>
+  <p style="text-align:center; margin-top:2rem;"><a href="/account/login">Log in</a> to add a review.</p>
+<% } %>

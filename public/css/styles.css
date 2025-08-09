@@ -1,3 +1,55 @@
+.review-form-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.add-review-btn,
+.back-btn {
+  min-width: 160px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15em;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+    cursor: pointer;
+}
+.add-review-btn {
+  background: #4c96d7;
+  color: #fff;
+  margin-top: 0;
+}
+.add-review-btn:hover {
+  background: #000000;
+}
+.back-btn {
+  background: #C5DDF2;
+  color: #000000;
+}
+.back-btn:hover {
+  background: #4c96d7;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .review-form-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .add-review-btn,
+  .back-btn {
+    min-width: 100%;
+    height: 48px;
+    font-size: 1em;
+  }
+}
+
 .add-classification-container {
   max-width: 400px;
   margin: 60px auto;
@@ -496,13 +548,37 @@
 }
 
 #detail-view img {
+  display: block;
   max-width: 350px;
   width: 100%;
   height: auto;
+  aspect-ratio: 4/3;
+  object-fit: contain;
   border-radius: 8px;
-  border: 2px solid #000000;
   box-shadow: 0 1px 4px rgba(76,150,215,0.10);
   background: #f8f9fa;
+  margin: 0 auto;
+}
+
+#detail-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 4px solid #000000;
+  box-shadow: 0 2px 8px rgba(76,150,215,0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+#detail-view > img {
+  background: #f8f9fa;
+  border-radius: 16px;
+  border: 2px solid #4c96d7;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 #detail-data {
@@ -577,6 +653,89 @@
   margin: 0;
   padding: 0;
   
+}
+.center-review-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.review-item {
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(76,150,215,0.08);
+  border: 2px solid #C5DDF2;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.review-author {
+  font-weight: bold;
+  color: #1d1f20;
+  font-size: 1.1em;
+}
+.review-rating {
+  display: flex;
+  gap: 0.15em;
+  font-size: 1.2em;
+}
+.star {
+  color: #C5DDF2;
+  font-size: 1.2em;
+}
+.star.filled {
+  color: #4c96d7;
+}
+.review-body {
+  font-size: 1.05em;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.review-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.95em;
+}
+.review-date {
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+.review-date-icon {
+  font-size: 1em;
+}
+.delete-review-btn {
+  background: #d74c4c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+    cursor: pointer;
+}
+.delete-review-btn:hover {
+  background: #c23e3e;
+}
+.review-item.empty-state {
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #888;
+  text-align: center;
+  font-style: italic;
+  padding: 2rem 0;
 }
 .container {
   width: 100%;
@@ -822,14 +981,14 @@ nav a:hover {
 
 .reviews-list li {
   margin-bottom: 15px;
-  padding: 8px 0;
+  padding: 30px;
   font-size: 16px;
   line-height: 1.4;
   color: #333;
 }
 
 .reviews-list li::before {
-  content: "• ";
+ 
   color: #C5DDF2;
   font-weight: bold;
   margin-right: 8px;
@@ -1189,23 +1348,128 @@ nav a:hover {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-  .account-update {
-    padding: 1rem;
+.styled-review-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(76,150,215,0.10);
+  border: 2px solid #4c96d7;
+  padding: 2rem 2.5rem;
+}
+
+.styled-review-form h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-bottom: 2px solid #4c96d7;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  color: #1d1f20;
+  margin-bottom: 0.5rem;
+  font-size: 1.08em;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2em;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0 2px;
+}
+
+.star-rating input[type="radio"]:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #FFD700;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 80px;
+  border: 2px solid #4c96d7;
+  border-radius: 8px;
+  padding: 0.7rem;
+  font-size: 1em;
+  background: #f8f9fa;
+  transition: border-color 0.2s;
+}
+
+.form-textarea:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+.review-form-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.add-review-btn,
+.back-btn {
+  min-width: 160px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15em;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+.add-review-btn {
+  background: #4c96d7;
+  color: #fff;
+  margin-top: 0;
+}
+.add-review-btn:hover {
+  background: #000000;
+}
+.back-btn {
+  background: #C5DDF2;
+  color: #000000;
+}
+.back-btn:hover {
+  background: #4c96d7;
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .review-form-actions {
+    flex-direction: column;
+    gap: 0.8rem;
   }
-  
-  .update-form-container,
-  .password-form-container {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .account-update h1 {
-    font-size: 1.8em;
-  }
-  
-  .update-form-container h2,
-  .password-form-container h2 {
-    font-size: 1.3em;
+  .add-review-btn,
+  .back-btn {
+    min-width: 100%;
+    height: 48px;
+    font-size: 1em;
   }
 }

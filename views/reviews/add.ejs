@@ -1,0 +1,31 @@
+<section class="styled-review-form">
+  <h2>Leave a Review</h2>
+  <% if (typeof errors !== 'undefined' && errors.errors && errors.errors.length > 0) { %>
+    <ul class="form-errors">
+      <% errors.errors.forEach(function(error) { %>
+        <li><%= error.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+  <form action="/reviews/add" method="POST">
+    <input type="hidden" name="vehicle_id" value="<%= vehicle_id %>">
+    <div class="form-group">
+      <label class="form-label">Rating:</label>
+      <div class="star-rating">
+        <% for (let i = 5; i >= 1; i--) { %>
+          <input type="radio" id="star<%= i %>" name="rating" value="<%= i %>" required>
+          <label for="star<%= i %>" title="<%= i %> stars">&#9733;</label>
+        <% } %>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="comment" class="form-label">Comment:</label>
+      <div class="form-caption" style="font-size:0.95em; color:#888; margin-bottom:0.3em;">Up to 500 characters allowed.</div>
+      <textarea name="comment" id="comment" required class="form-textarea" placeholder="Share your thoughts..."><%= typeof comment !== 'undefined' ? comment : '' %></textarea>
+    </div>
+    <div class="review-form-actions">
+      <button type="submit" class="add-review-btn">Add Review</button>
+      <a href="/inv/detail/<%= vehicle_id %>" class="back-btn">Back to Vehicle</a>
+    </div>
+  </form>
+</section>
